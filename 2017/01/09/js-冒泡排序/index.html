@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2016/12 | 滴水</title>
+  <title>js-冒泡排序 | 滴水</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,69 +191,45 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/12/29/一点点/">一点点</a></h4>
-                            
-                            <p><time datetime="2016-12-29T11:30:34.000Z"><a href="/2016/12/29/一点点/">2016-12-29</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-01-09T03:02:40.000Z" itemprop="datePublished">
+          2017-01-09
+      </time>
+    
+</span>
+                <h1>js-冒泡排序</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p><img src="http://p1.bpimg.com/567571/475307cad577afe4.png" alt=""></p>
+<hr>
+<p> javascript 冒泡排序 简而言之 就是把一串 无序的 数字 通过js语法 变为有序的数字  或从大到小  或从小到大</p>
+<ul>
+<li><p>在这里 我写了一段关于从小到大排序的 冒泡排序。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang="en"&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="UTF-8"&gt;</div><div class="line">    &lt;title&gt;冒泡排序&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">    var arr = [99, 52, 36, 49, 23, 24, 5, 9]</div><div class="line">    var count = 0;</div><div class="line">    // 外循环  控制比较的轮数</div><div class="line">    for (var i = 0; i &lt; arr.length - 1; i++) &#123;</div><div class="line">        // 在每一轮开始比较前，假设这一轮是比较完毕的</div><div class="line">        var isSorted = true;</div><div class="line">        // 记录比较的轮数</div><div class="line">        count++;</div><div class="line">        // 内循环 控制每一轮比较的次数</div><div class="line">        for (var j = 0; j &lt; arr.length - 1 - i; j++) &#123;</div><div class="line">            // 如果当前项大于当前项的后一项，那么--交换位置</div><div class="line">            if (arr[j] &gt; arr[j + 1]) &#123;</div><div class="line">                // 交换变量的值</div><div class="line">                // 先设置一个新的变量</div><div class="line">                var temp = 0;</div><div class="line">                temp = arr[j];</div><div class="line">                arr[j] = arr[j + 1];</div><div class="line">                arr[j + 1] = temp;</div><div class="line">                isSorted = false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        // 确认每一轮比较完毕后，结束循环。</div><div class="line">        if (isSorted) &#123;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    console.log(arr);</div><div class="line">    console.log(count);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
